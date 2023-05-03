@@ -80,8 +80,17 @@ char    *get_next_line(int fd)
     line = read_and_join(fd, buf, backup);
     ft_free(&buf);
     if (!line)
-        return (ft_free(&backup));
+ // {
+ //     if (backup)
+ //        return (ft_free(&backup));
+ //     return (NULL);
+ // }
     backup = extract(line);
+ // if(!backup && line)
+ // {
+ //     ft_free(&line);
+ //     return (NULL);
+ // }
     return (line);
 }
 
