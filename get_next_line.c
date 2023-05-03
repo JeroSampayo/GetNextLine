@@ -84,3 +84,4 @@ char    *get_next_line(int fd)
     backup = extract(line);
     return (line);
 }
+
