@@ -6,7 +6,7 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 12:52:05 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/05/02 21:28:16 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/05/13 18:08:03 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int		ft_strlen(char *str);
 char	*ft_strchr(char *s, int i);
 char	*ft_strdup(char *s);
 char	*ft_strjoin(char *s1, char *s2);
+void	*ft_free(char **str);
 
 #endif
