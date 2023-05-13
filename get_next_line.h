@@ -29,5 +29,3 @@ char	*ft_strdup(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 
 #endif
-
-
