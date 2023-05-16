@@ -6,7 +6,7 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:53:47 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/05/13 18:24:09 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:59:47 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@ void	*ft_free(char **str)
 {
 	if (str && *str)
 		free(*str);
+		*str = NULL;
 	return (NULL);
 }
 
-static char	*read_and_join(int fd, char *buf, char *backup)
+static char	*read_and_join(int fd, char *buf, char **backup)
 {
 	int		read_line;
 
 	read_line = 1;
-	while (read_line > 0 && !ft_strchr(backup, '\n'))
+	while (read_line > 0 && read_line <= BUFFER_SIZE)
 	{
 		read_line = read(fd, buf, BUFFER_SIZE);
 		if (read_line == -1)
@@ -33,11 +34,13 @@ static char	*read_and_join(int fd, char *buf, char *backup)
 		else if (read_line == 0)
 			break ;
 		buf[read_line] = '\0';
-		backup = ft_strjoin(backup, buf);
-		if (!backup)
-			return (ft_free(&backup));
+		*backup = ft_strjoin(*backup, buf);
+		if (!*backup)
+			return (NULL);
+		if (ft_strchr(*backup, '\n'))
+			break ;
 	}
-	return (backup);
+	return (*backup);
 }
 
 char	*extract(char *line)
@@ -93,18 +96,17 @@ char	*get_next_line(int fd)
 		return (NULL);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return (ft_free(&backup));
-	printf("Backup abans de read&join: %s\n", backup);
-	line = read_and_join(fd, buf, backup);
+	{
+		backup = ft_free(&backup);
+		return (NULL);
+	}
+	line = read_and_join(fd, buf, &backup);
 	ft_free(&buf);
 	if (!line)
 		return (ft_free(&backup));
-	printf("Backup despres de read&join: %s\n", backup);
-	printf("Line despres de read&join: %s\n", line);
 	backup = extract(line);
-	printf("Backup despres de extract: %s\n", backup);
-	printf("Line despres de extract: %s\n", line);
 	line = clean_line(line);
-	printf("Line despres de clean line: %s\n", line);
+	if (!line)
+		return (ft_free(&backup));
 	return (line);
 }
