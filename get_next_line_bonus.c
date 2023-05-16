@@ -6,12 +6,11 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 15:53:47 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/05/16 18:33:17 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 18:48:42 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 void	*ft_free(char **str)
 {

@@ -6,7 +6,7 @@
 /*   By: jmiras-s <jmiras-s@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 12:52:05 by jmiras-s          #+#    #+#             */
-/*   Updated: 2023/05/16 17:25:23 by jmiras-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 18:48:59 by jmiras-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <string.h>
 
 char	*get_next_line(int fd);
 char	*ft_substr(char *s, unsigned int start, size_t len);
