@@ -32,6 +32,4 @@ get_next_line.c get_next_line_utils.c -D BUFFER_SIZE=<size>
 You only have to edit the get_next_line.c file and uncomment the main function and headers inside it. You can edit test.txt files to put another text if you wish to test othe cases. Then simply run this command (change "xx" with desired buffer size) :
 
 gcc -Wall -Werror -Wextra -D BUFFER_SIZE=xx get_next_line.c get_next_line_utils.c && ./a.out
-Or you can also use this third party tester to fully test the project
-
-Tripouille/gnlTester
+Or you can also use this third party tester to fully test the project.
