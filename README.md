@@ -4,7 +4,6 @@
 ### Reading a line on a fd is way too tedious
 GitHub code size in bytes Number of lines of Code language count GitHub top language GitHub last commit
 
-About · Usage · Testing
 
 #  💡 About the project
 The aim of this project is to make you code a function that returns a line, read from a file descriptor.
@@ -29,7 +28,8 @@ To use the function in your code, simply include its header:
 and, when compiling your code, add the source files and the required flag:
 
 get_next_line.c get_next_line_utils.c -D BUFFER_SIZE=<size>
-#  📋 Testing
+  
+# 📋 Testing
 You only have to edit the get_next_line.c file and uncomment the main function and headers inside it. You can edit test.txt files to put another text if you wish to test othe cases. Then simply run this command (change "xx" with desired buffer size) :
 
 gcc -Wall -Werror -Wextra -D BUFFER_SIZE=xx get_next_line.c get_next_line_utils.c && ./a.out
