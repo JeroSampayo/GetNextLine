@@ -3,8 +3,6 @@
 #### 
 
 ### Reading a line on a fd is way too tedious
-GitHub code size in bytes Number of lines of Code language count GitHub top language GitHub last commit
-
 
 #  💡 About the project
 The aim of this project is to make you code a function that returns a line, read from a file descriptor.
